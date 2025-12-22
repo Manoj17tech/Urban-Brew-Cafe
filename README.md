@@ -51,23 +51,23 @@ This website is suitable for live deployment and client delivery.
 
 urban-brew-cafe/
 │
-├── index.html
-├── menu.html
-├── about.html
-├── contact.html
-├── admin.html
+├── index.html          # Home page
+├── menu.html           # Menu page
+├── about.html          # About Us page
+├── contact.html        # Contact / Order page
+├── admin.html          # Admin (read-only) page
 │
 ├── css/
-│ └── style.css
+│   └── style.css       # Global styles (layout, colors, responsiveness)
 │
 ├── js/
-│ ├── main.js
-│ ├── form.js
-│ └── admin.js
+│   ├── main.js         # Navigation, theme toggle, UI interactions
+│   ├── form.js         # Form validation & LocalStorage handling
+│   └── admin.js        # Fetch and display stored form data
 │
-└── README.md
+└── README.md           # Project documentation
 
---- Information of the Website (from Developer POV)
+##Website Information and Features .
 
 ## 🧾 Form & Admin Logic
 
