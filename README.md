@@ -49,3 +49,91 @@ This website is suitable for live deployment and client delivery.
 
 ## 📁 Project Structure
 
+urban-brew-cafe/
+│
+├── index.html
+├── menu.html
+├── about.html
+├── contact.html
+├── admin.html
+│
+├── css/
+│ └── style.css
+│
+├── js/
+│ ├── main.js
+│ ├── form.js
+│ └── admin.js
+│
+└── README.md
+
+--- Information of the Website (from Developer POV)
+
+## 🧾 Form & Admin Logic
+
+- All form fields are mandatory
+- Email and phone number validation is enforced
+- On successful submission:
+  - Data is saved in LocalStorage as JSON
+  - A success message is displayed
+  - Form fields are reset
+- Admin page fetches and displays stored data in read-only mode
+
+---
+
+## 📱 Responsiveness
+
+- Mobile-first design approach
+- Tested across:
+  - Mobile devices
+  - Tablets
+  - Desktop screens
+- Navigation and forms adapt smoothly on smaller screens
+
+---
+
+## 🌙 Light / Dark Mode
+
+- Toggle switch to change theme
+- Theme preference persists using LocalStorage
+- Fonts, text colors, and backgrounds adjust automatically for readability
+
+---
+
+## 🚀 How to Run Locally
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/your-username/urban-brew-cafe.git
+
+2. Navigate to the project folder
+   cd urban-brew-cafe
+
+🌍 Live Demo
+
+🔗 Live Website: (Add deployment link here – Netlify / Vercel)
+
+📈 Future Enhancements
+
+Backend integration
+
+Online payment support
+
+Admin authentication
+
+Order management system
+
+CMS-based menu updates
+
+👨‍💻 Author
+
+Developed by Manoj M V
+Full-Stack Web Developer
+
+Contact Me
+📞 +91 93530 29057
+💌 manojmvm5@gmail.com
+
+📄 License
+
+This project is created for educational and client-demonstration purposes.
