@@ -78,7 +78,7 @@ This website is suitable for live deployment and client delivery.
 ---
 
 ## 📁 Project Structure
-
+```
 urban-brew-cafe/
 │
 ├── index.html # Home page
@@ -98,7 +98,7 @@ urban-brew-cafe/
 ├── screenshots/ # Website screenshots
 │
 └── README.md # Project documentation
-
+```
 ---
 
 ## 🧾 Form & Admin Logic
