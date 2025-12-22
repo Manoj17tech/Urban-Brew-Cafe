@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin dashboard for Urban Brew Café - view submitted orders and messages">
+    <title>Urban Brew Café</title>
+    <link rel="shortcut icon" href="../assets/LogoCoffe.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <i class="fas fa-mug-hot"></i>
+                    <span>Urban Brew <strong>Café</strong></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact & Order</a></li>
+                    <li><a href="./admin.html" class="active">Admin</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Hero -->
+    <section class="hero admin-hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Admin Dashboard</h1>
+            <p class="hero-subtitle">View submitted orders and customer messages</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-header">
+                <div class="admin-stats">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon pending">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="pendingCount">0</h3>
+                                <p>Pending Orders</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon total">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalOrders">0</h3>
+                                <p>Total Orders</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon today">
+                                <i class="fas fa-calendar-day"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="todayOrders">0</h3>
+                                <p>Today's Orders</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon messages">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="messageCount">0</h3>
+                                <p>Unread Messages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-controls">
+                    <button class="btn btn-secondary" id="refreshOrders">
+                        <i class="fas fa-sync-alt"></i> Refresh Data
+                    </button>
+                    <button class="btn btn-secondary" id="exportData">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                    <div class="date-filter">
+                        <label for="dateFilter">Filter by Date:</label>
+                        <input type="date" id="dateFilter" class="form-control">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Orders Table -->
+            <div class="admin-table-container">
+                <div class="table-header">
+                    <h3><i class="fas fa-list-alt"></i> Customer Orders</h3>
+                    <div class="table-actions">
+                        <div class="search-box">
+                            <input type="text" id="searchOrders" placeholder="Search orders..." class="form-control">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="status-filter">
+                            <select id="statusFilter" class="form-control">
+                                <option value="all">All Statuses</option>
+                                <option value="pending">Pending</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="orders-table" id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date & Time</th>
+                                <th>Customer Name</th>
+                                <th>Contact</th>
+                                <th>Order Type</th>
+                                <th>Order Details</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Orders will be populated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="no-data" id="noDataMessage">
+                    <i class="fas fa-clipboard-list fa-3x"></i>
+                    <h4>No Orders Found</h4>
+                    <p>No customer orders have been submitted yet.</p>
+                    <p>Orders will appear here once customers submit them through the contact form.</p>
+                </div>
+            </div>
+            
+            <!-- Messages Section -->
+            <div class="messages-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-comments"></i> Customer Messages</h3>
+                </div>
+                
+                <div class="messages-grid" id="messagesGrid">
+                    <!-- Messages will be populated here by JavaScript -->
+                </div>
+                
+                <div class="no-data" id="noMessagesMessage">
+                    <i class="fas fa-envelope fa-3x"></i>
+                    <h4>No Messages</h4>
+                    <p>No customer messages have been received yet.</p>
+                </div>
+            </div>
+            
+            <!-- Data Management -->
+            <div class="data-management">
+                <div class="section-header">
+                    <h3><i class="fas fa-database"></i> Data Management</h3>
+                </div>
+                
+                <div class="management-actions">
+                    <div class="action-card">
+                        <h4><i class="fas fa-trash-alt"></i> Clear Test Data</h4>
+                        <p>Remove sample orders and messages used for testing</p>
+                        <button class="btn btn-secondary" id="clearTestData">Clear Test Data</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <h4><i class="fas fa-file-import"></i> Add Sample Data</h4>
+                        <p>Add sample orders to demonstrate the admin panel</p>
+                        <button class="btn btn-secondary" id="addSampleData">Add Sample Data</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <h4><i class="fas fa-info-circle"></i> Storage Info</h4>
+                        <p>LocalStorage Usage: <span id="storageUsage">0 KB</span></p>
+                        <p>Orders in Database: <span id="ordersCount">0</span></p>
+                        <button class="btn btn-secondary" id="clearAllData">Clear All Data</button>
+                    </div>
+                </div>
+                
+                <div class="system-info">
+                    <h4><i class="fas fa-info-circle"></i> System Information</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Last Updated:</span>
+                            <span class="info-value" id="lastUpdated">Never</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Browser Storage:</span>
+                            <span class="info-value" id="browserStorage">Checking...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">App Version:</span>
+                            <span class="info-value">1.0.0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Data Format:</span>
+                            <span class="info-value">JSON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-mug-hot"></i>
+                        <span>Urban Brew <strong>Café</strong></span>
+                    </div>
+                    <p class="footer-description">Crafting exceptional coffee experiences since 2018</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Visit Us</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 1234 Coffee Street, Bengaluru-Karnataka</p>
+                        <p><i class="fas fa-phone"></i>+91 9876543210</p>
+                        <p><i class="fas fa-envelope"></i> hello@urbanbrewcafe.com</p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday-Friday: 7am-9pm</p>
+                    <p>Saturday: 8am-10pm</p>
+                    <p>Sunday: 8am-8pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="./menu.html">Menu</a></li>
+                        <li><a href="./about.html">Our Story</a></li>
+                        <li><a href="./contact.html">Order Online</a></li>
+                        <li><a href="./admin.html">Admin Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Urban Brew Café. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="admin-note">Admin Access: Read-only mode | Data stored in browser localStorage</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

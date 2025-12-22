@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Urban Brew Café - Premium coffee, artisanal snacks, and cozy atmosphere in the heart of the city"
+    />
+    <title>Urban Brew Café</title>
+    <link rel="shortcut icon" href="./assets/LogoCoffe.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="./index.html">
+            <i class="fas fa-mug-hot"></i>
+            <span>Urban Brew <strong>Café</strong></span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="./public/menu.html">Menu</a></li>
+            <li><a href="./public/about.html">About Us</a></li>
+            <li><a href="./public/contact.html">Contact & Order</a></li>
+            <li><a href="./public/admin.html">Admin</a></li>
+          </ul>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark/light mode"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1 class="hero-title">Crafting Perfect Moments, One Cup at a Time</h1>
+        <p class="hero-subtitle">
+          Artisan coffee, locally sourced ingredients, and a warm urban
+          atmosphere
+        </p>
+        <a href="./public/contact.html" class="btn btn-primary"
+          >Order Now <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+      <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Welcome to Urban Brew</h2>
+          <p>Where city rhythm meets coffee serenity</p>
+        </div>
+        <div class="intro-content">
+          <div class="intro-text">
+            <p>
+              Nestled in the heart of the city, Urban Brew Café is more than
+              just a coffee shop—it's a community space where creativity flows
+              as freely as our espresso. We meticulously source our beans from
+              sustainable farms and roast them in-house to unlock their fullest
+              flavor.
+            </p>
+            <p>
+              Every cup tells a story, every pastry is crafted with care, and
+              every moment spent here is designed to be memorable. Whether
+              you're starting your day, meeting colleagues, or seeking a quiet
+              corner, we've created the perfect urban oasis for you.
+            </p>
+          </div>
+          <div class="intro-image">
+            <img
+              src="https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Urban Brew Café interior with warm lighting and comfortable seating"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Menu Items -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Specialties</h2>
+          <p>Discover our customer favorites</p>
+        </div>
+        <div class="featured-grid">
+          <article class="menu-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Artisan latte with intricate foam art"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Signature Latte</h3>
+              <p>
+                Our house-blend espresso with creamy steamed milk and a touch of
+                vanilla
+              </p>
+              <div class="card-footer">
+                <span class="price">$5.50</span>
+                <button class="btn-card">Add to Order</button>
+              </div>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Fresh avocado toast on rustic bread"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Avocado Toast</h3>
+              <p>
+                Sourdough bread with smashed avocado, cherry tomatoes, and
+                microgreens
+              </p>
+              <div class="card-footer">
+                <span class="price">$8.75</span>
+                <button class="btn-card">Add to Order</button>
+              </div>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Decadent chocolate croissant on a plate"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Chocolate Croissant</h3>
+              <p>
+                Buttery, flaky pastry filled with rich dark chocolate, baked
+                fresh daily
+              </p>
+              <div class="card-footer">
+                <span class="price">$4.25</span>
+                <button class="btn-card">Add to Order</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="./public/menu.html" class="btn btn-secondary"
+            >View Full Menu <i class="fas fa-utensils"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-mug-hot"></i>
+              <span>Urban Brew <strong>Café</strong></span>
+            </div>
+            <p class="footer-description">
+              Crafting exceptional coffee experiences since 2018
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Visit Us</h4>
+            <address>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 1234 Coffee Street,
+                Bengaluru-Karnataka.
+              </p>
+              <p><i class="fas fa-phone"></i>+91 9876543210</p>
+              <p><i class="fas fa-envelope"></i> hello@urbanbrewcafe.com</p>
+            </address>
+          </div>
+          <div class="footer-section">
+            <h4>Hours</h4>
+            <p>Monday-Friday: 7am-9pm</p>
+            <p>Saturday: 8am-10pm</p>
+            <p>Sunday: 8am-8pm</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="./public/menu.html">Menu</a></li>
+              <li><a href="./public/about.html">Our Story</a></li>
+              <li><a href="./public/contact.html">Order Online</a></li>
+              <li><a href="./public/admin.html">Admin Portal</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Urban Brew Café. All rights reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
