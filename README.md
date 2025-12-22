@@ -17,7 +17,7 @@ This website is suitable for live deployment and client delivery.
 
 - **Home** – Hero section, café introduction, featured menu items, and call-to-action
 - **Menu** – Categorized menu (Coffee, Snacks, Desserts) with images and prices
-- **About Us** – Café story, mission, values, and “Why Choose Us” section
+- **About Us** – Café story, mission, values, and “Why Choose Us”
 - **Contact / Order** – Validated form for orders and messages
 - **Admin (Read-Only)** – View submitted orders/messages
 
@@ -25,10 +25,10 @@ This website is suitable for live deployment and client delivery.
 
 ## 🛠️ Tech Stack
 
-- **HTML5** – Semantic and accessible markup  
-- **CSS3** – Flexbox, Grid, responsive design, animations  
-- **JavaScript (ES6+)** – Form validation, LocalStorage handling, UI interactions  
-- **LocalStorage** – Client-side data persistence  
+- **HTML5** – Semantic and accessible markup
+- **CSS3** – Flexbox, Grid, responsive design, animations
+- **JavaScript (ES6+)** – Form validation, LocalStorage handling, UI interactions
+- **LocalStorage** – Client-side data persistence
 
 > No frameworks or UI libraries are used.
 
@@ -47,27 +47,59 @@ This website is suitable for live deployment and client delivery.
 
 ---
 
+## 🖼️ Screenshots
+
+> Screenshots are added inside the `screenshots/` folder.
+
+### 🏠 Home Page
+
+![Home Page](./Screenshots/HomePage.png)
+
+### 📋 Menu Page
+
+![Menu Page](./Screenshots/MenuPage.png)
+
+### ℹ️ About Us Page
+
+![About Us Page](./Screenshots/AboutUsPage.png)
+
+### 📞 Contact / Order Page
+
+![Contact & Order Page](./Screenshots/Order&Contact.png)
+
+### 🔐 Admin Dashboard
+
+![Admin Dashboard](./Screenshots/AdminPanel.png)
+
+### Local Storage (DB)
+
+![Local Storage](./Screenshots/LocalStorage.png)
+
+---
+
 ## 📁 Project Structure
 
 urban-brew-cafe/
 │
-├── index.html          # Home page
-├── menu.html           # Menu page
-├── about.html          # About Us page
-├── contact.html        # Contact / Order page
-├── admin.html          # Admin (read-only) page
+├── index.html # Home page
+├── menu.html # Menu page
+├── about.html # About Us page
+├── contact.html # Contact / Order page
+├── admin.html # Admin (read-only) page
 │
 ├── css/
-│   └── style.css       # Global styles (layout, colors, responsiveness)
+│ └── style.css # Global styles (layout, colors, responsiveness)
 │
 ├── js/
-│   ├── main.js         # Navigation, theme toggle, UI interactions
-│   ├── form.js         # Form validation & LocalStorage handling
-│   └── admin.js        # Fetch and display stored form data
+│ ├── main.js # Navigation, theme toggle, UI interactions
+│ ├── form.js # Form validation & LocalStorage handling
+│ └── admin.js # Fetch and display stored form data
 │
-└── README.md           # Project documentation
+├── screenshots/ # Website screenshots
+│
+└── README.md # Project documentation
 
-##Website Information and Features .
+---
 
 ## 🧾 Form & Admin Logic
 
@@ -102,18 +134,30 @@ urban-brew-cafe/
 
 ## 🚀 How to Run Locally
 
-1. Clone the repository  
+1. Clone the repository
+
    ```bash
-   git clone https://github.com/your-username/urban-brew-cafe.git
+   git clone https://github.com/Manoj17tech/Urban-Brew-Cafe.git
+
+   ```
 
 2. Navigate to the project folder
-   cd urban-brew-cafe
 
-🌍 Live Demo
+   ```bash
+      cd Urban-Brew-Cafe
 
-🔗 Live Website: (Add deployment link here – Netlify / Vercel)
+   ```
 
-📈 Future Enhancements
+3. Open index.html in any modern browser
+   (or use Live Server in VS Code)
+
+
+### 🌍 Live Demo
+
+🔗 Live Website: (Add Netlify / Vercel deployment link here)
+
+
+### 📈 Future Enhancements
 
 Backend integration
 
@@ -130,9 +174,8 @@ CMS-based menu updates
 Developed by Manoj M V
 Full-Stack Web Developer
 
-Contact Me
-📞 +91 93530 29057
-💌 manojmvm5@gmail.com
+📞 Phone: +91 93530 29057
+💌 Email: manojmvm5@gmail.com
 
 📄 License
 
