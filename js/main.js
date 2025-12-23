@@ -55,6 +55,21 @@ function initializeTheme() {
     });
 }
 
+
+function updateThemeIcon(iconElement, theme) {
+    if (!iconElement) return;
+    
+    if (theme === 'dark') {
+        iconElement.className = 'fas fa-sun';
+        iconElement.setAttribute('title', 'Switch to light mode');
+        iconElement.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+        iconElement.className = 'fas fa-moon';
+        iconElement.setAttribute('title', 'Switch to dark mode');
+        iconElement.setAttribute('aria-label', 'Switch to dark mode');
+    }
+}
+
 function updateThemeIcon(iconElement, theme) {
     if (!iconElement) return;
     
